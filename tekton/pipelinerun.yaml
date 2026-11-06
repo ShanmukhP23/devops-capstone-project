@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  name: accounts-cd-run-1
+spec:
+  pipelineRef:
+    name: cd-pipeline
+  params:
+    - name: repo-url
+      value: https://github.com/ShanmukhP23/devops-capstone-project.git
+    - name: branch
+      value: main
+  workspaces:
+    - name: pipeline-workspace
+      persistentVolumeClaim:
+        claimName: pipelinerun-pvc
