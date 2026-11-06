@@ -1,1 +1,1 @@
-curl: (28) Failed to connect to accounts-sn-labs-shanmukhpawa.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud port 80 after 9378 ms: Connection timed out
+{"name":"Account REST API Service","version":"1.0"}
