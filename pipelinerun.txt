@@ -1,0 +1,32 @@
+OpenShift Tekton API check:
+No resources found in sn-labs-shanmukhpawa namespace.
+manualapprovalgates                   mag                                             operator.tekton.dev/v1alpha1                  false        ManualApprovalGate
+openshiftpipelinesascodes             opac,pac                                        operator.tekton.dev/v1alpha1                  false        OpenShiftPipelinesAsCode
+tektonaddons                                                                          operator.tekton.dev/v1alpha1                  false        TektonAddon
+tektonchains                                                                          operator.tekton.dev/v1alpha1                  false        TektonChain
+tektonconfigs                                                                         operator.tekton.dev/v1alpha1                  false        TektonConfig
+tektonhubs                                                                            operator.tekton.dev/v1alpha1                  false        TektonHub
+tektoninstallersets                                                                   operator.tekton.dev/v1alpha1                  false        TektonInstallerSet
+tektonpipelines                                                                       operator.tekton.dev/v1alpha1                  false        TektonPipeline
+tektonresults                                                                         operator.tekton.dev/v1alpha1                  false        TektonResult
+tektontriggers                                                                        operator.tekton.dev/v1alpha1                  false        TektonTrigger
+repositories                          repo                                            pipelinesascode.tekton.dev/v1alpha1           true         Repository
+resolutionrequests                                                                    resolution.tekton.dev/v1beta1                 true         ResolutionRequest
+clustertasks                                                                          tekton.dev/v1beta1                            false        ClusterTask
+conditions                                                                            tekton.dev/v1alpha1                           true         Condition
+customruns                                                                            tekton.dev/v1beta1                            true         CustomRun
+pipelineresources                                                                     tekton.dev/v1alpha1                           true         PipelineResource
+pipelineruns                          pr,prs                                          tekton.dev/v1                                 true         PipelineRun
+pipelines                                                                             tekton.dev/v1                                 true         Pipeline
+runs                                                                                  tekton.dev/v1alpha1                           true         Run
+stepactions                                                                           tekton.dev/v1alpha1                           true         StepAction
+taskruns                              tr,trs                                          tekton.dev/v1                                 true         TaskRun
+tasks                                                                                 tekton.dev/v1                                 true         Task
+verificationpolicies                                                                  tekton.dev/v1alpha1                           true         VerificationPolicy
+clusterinterceptors                   ci                                              triggers.tekton.dev/v1alpha1                  false        ClusterInterceptor
+clustertriggerbindings                ctb                                             triggers.tekton.dev/v1beta1                   false        ClusterTriggerBinding
+eventlisteners                        el                                              triggers.tekton.dev/v1beta1                   true         EventListener
+interceptors                          ni                                              triggers.tekton.dev/v1alpha1                  true         Interceptor
+triggerbindings                       tb                                              triggers.tekton.dev/v1beta1                   true         TriggerBinding
+triggers                              tri                                             triggers.tekton.dev/v1beta1                   true         Trigger
+triggertemplates                      tt                                              triggers.tekton.dev/v1beta1                   true         TriggerTemplate

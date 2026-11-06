@@ -1,0 +1,45 @@
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS                      IMAGES                                                                                                                                                                              SELECTOR
+deployment.apps/accounts                0/1     1            0           90s     accounts                        image-registry.openshift-image-registry.svc:5000/sn-labs-shanmukhpawa/accounts@sha256:0bf91cd9caa42e6f86f84b09c262059e0ebb29c5f5b6a78a98d4854ffa7512c0                              deployment=accounts
+deployment.apps/accounts-db             1/1     1            1           91s     accounts-db                     postgres@sha256:300ebd02c6d4de9ee27ad7f6855d5d21b4d3a4a5117767c1197d284c635d9736                                                                                                    deployment=accounts-db
+deployment.apps/openshift-web-console   2/2     2            2           7h17m   openshift-web-console,console   us.icr.io/sn-labsassets/openshift-console-auth-proxy:0.0.1,quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:23d66978f4791a76db53348befd623ef670214c3d7a0dbc0cbe9c2eae4c733d8   app=openshift-web-console
+
+NAME                                         READY   STATUS             RESTARTS      AGE     IP              NODE          NOMINATED NODE   READINESS GATES
+pod/accounts-1-build                         0/1     Completed          0             8m21s   172.17.51.232   10.241.0.54   <none>           <none>
+pod/accounts-2-build                         0/1     Completed          0             5m21s   172.17.51.244   10.241.0.54   <none>           <none>
+pod/accounts-3-build                         1/1     Running            0             2m16s   172.17.51.232   10.241.0.54   <none>           <none>
+pod/accounts-cd8f9b5df-r7djk                 0/1     CrashLoopBackOff   2 (24s ago)   50s     172.17.20.222   10.241.0.55   <none>           <none>
+pod/accounts-db-d9f4c498f-4w4hr              1/1     Running            0             38s     172.17.20.251   10.241.0.55   <none>           <none>
+pod/openshift-web-console-67f58955bb-7k6mw   2/2     Running            0             7h17m   172.17.51.159   10.241.0.54   <none>           <none>
+pod/openshift-web-console-67f58955bb-glvq5   2/2     Running            0             7h17m   172.17.54.33    10.241.0.53   <none>           <none>
+
+NAME                                               DESIRED   CURRENT   READY   AGE     CONTAINERS                      IMAGES                                                                                                                                                                              SELECTOR
+replicaset.apps/accounts-7c4b6ccfdc                0         0         0       89s     accounts                        image-registry.openshift-image-registry.svc:5000/sn-labs-shanmukhpawa/accounts@sha256:0bf91cd9caa42e6f86f84b09c262059e0ebb29c5f5b6a78a98d4854ffa7512c0                              deployment=accounts,pod-template-hash=7c4b6ccfdc
+replicaset.apps/accounts-7c4dcb8c78                0         0         0       90s     accounts                                                                                                                                                                                                            deployment=accounts,pod-template-hash=7c4dcb8c78
+replicaset.apps/accounts-8464f94487                0         0         0       90s     accounts                                                                                                                                                                                                            deployment=accounts,pod-template-hash=8464f94487
+replicaset.apps/accounts-cd8f9b5df                 1         1         0       50s     accounts                        image-registry.openshift-image-registry.svc:5000/sn-labs-shanmukhpawa/accounts@sha256:0bf91cd9caa42e6f86f84b09c262059e0ebb29c5f5b6a78a98d4854ffa7512c0                              deployment=accounts,pod-template-hash=cd8f9b5df
+replicaset.apps/accounts-db-6b5d8f758b             0         0         0       91s     accounts-db                                                                                                                                                                                                         deployment=accounts-db,pod-template-hash=6b5d8f758b
+replicaset.apps/accounts-db-857fcc478              0         0         0       90s     accounts-db                     postgres@sha256:300ebd02c6d4de9ee27ad7f6855d5d21b4d3a4a5117767c1197d284c635d9736                                                                                                    deployment=accounts-db,pod-template-hash=857fcc478
+replicaset.apps/accounts-db-878d46d67              0         0         0       39s     accounts-db                     quay.io/sclorg/postgresql-15-c9s                                                                                                                                                    deployment=accounts-db,pod-template-hash=878d46d67
+replicaset.apps/accounts-db-d9f4c498f              1         1         1       38s     accounts-db                     postgres@sha256:300ebd02c6d4de9ee27ad7f6855d5d21b4d3a4a5117767c1197d284c635d9736                                                                                                    deployment=accounts-db,pod-template-hash=d9f4c498f
+replicaset.apps/openshift-web-console-67f58955bb   2         2         2       7h17m   openshift-web-console,console   us.icr.io/sn-labsassets/openshift-console-auth-proxy:0.0.1,quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:23d66978f4791a76db53348befd623ef670214c3d7a0dbc0cbe9c2eae4c733d8   app=openshift-web-console,pod-template-hash=67f58955bb
+
+NAME                            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE     SELECTOR
+service/accounts                ClusterIP   172.21.50.78    <none>        8080/TCP   90s     deployment=accounts
+service/accounts-db             ClusterIP   172.21.93.111   <none>        5432/TCP   91s     deployment=accounts-db
+service/openshift-web-console   ClusterIP   172.21.179.62   <none>        8000/TCP   7h17m   app=openshift-web-console
+
+NAME                                HOST/PORT                                                                                                                        PATH   SERVICES   PORT       TERMINATION   WILDCARD
+route.route.openshift.io/accounts   accounts-sn-labs-shanmukhpawa.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud          accounts   8080-tcp                 None
+accounts-sn-labs-shanmukhpawa.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8): Cannot continue
+[2026-11-06 15:19:31 +0000] [INFO] [glogging] Worker exiting (pid: 2)
+[2026-11-06 15:19:31 +0000] [CRITICAL] [__init__] (psycopg2.OperationalError) connection to server at "accounts-db" (172.21.93.111), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8): Cannot continue
+[2026-11-06 15:19:31 +0000] [INFO] [glogging] Worker exiting (pid: 3)
+[2026-11-06 15:19:31 +0000] [1] [WARNING] Worker with pid 2 was terminated due to signal 15
+[2026-11-06 15:19:31 +0000] [1] [INFO] Shutting down: Master
+[2026-11-06 15:19:31 +0000] [1] [INFO] Reason: App failed to load.
